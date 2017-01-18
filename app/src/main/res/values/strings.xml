@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">铁哥专属</string>
+    <string name="action_about">可爱的「关于」页面</string>
+    <string name="about_help">介绍与帮助</string>
+    <string name="gayhub">用到的开源库</string>
+    <string name="other_source">其他第三方平台</string>
+    <string name="develpoers">开发人员</string>
+    <string name="share">分享</string>
+    <string name="share_meizhi_to">分享妹纸到...</string>
+    <string name="about_help_str">简单的App，简单的自己---查看相册。\n\n铁哥在慢慢长大，舅舅也要有所成长才行。\n\n这是第一次尝试写一个App，想走过整体的流程，立项-需求-原型-UI-开发-上架-迭代。\n
+    \n在此，学习和使用MVP，深化对Material Desgin设计的理解，使用SVG，多尝试多使用开源库。</string>
+    <string name="open_source_libraries_list">com.android.support:design:23.2.1\ncom.android.support:recyclerview-v7:23.2.1\ncom.github.bumptech.glide:glide:3.7.0\ncom.jakewharton:butterknife:8.4.0\ncom.orhanobut:logger:1.15\ncom.android.support:appcompat-v7:23.2.0\ncom.github.chrisbanes.photoview:library:1.2.3</string>
+    <string name="other_source_list">http://developer.qiniu.com</string>
+</resources>

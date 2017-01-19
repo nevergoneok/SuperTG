@@ -21,13 +21,11 @@ package com.supertg.supertg.ui.main.interfaces;
 
 import android.view.View;
 
-import com.supertg.supertg.util.getPicAlbum.ImageItem;
-
 import java.util.List;
 
 /**
  * Created by drakeet on 7/1/15.
  */
 public interface OnMeizhiTouchListener {
-    void onTouch(View meizhiView, ImageItem meizhi, List<ImageItem> mList);
+    void onTouch(View meizhiView, String meizhi, List<String> mList);
 }

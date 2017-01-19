@@ -8,11 +8,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.bumptech.glide.Glide;
-import com.orhanobut.logger.Logger;
 import com.supertg.supertg.R;
 import com.supertg.supertg.ui.main.interfaces.OnMeizhiTouchListener;
-import com.supertg.supertg.util.BitmapUtils;
-import com.supertg.supertg.util.getPicAlbum.ImageItem;
 import com.supertg.supertg.widget.RatioImageView;
 
 import java.util.List;
@@ -26,12 +23,12 @@ import butterknife.ButterKnife;
 
 public class MeizhiListAdapter extends RecyclerView.Adapter<MeizhiListAdapter.ViewHolder> {
 
-    private final List<ImageItem> mList;
-    private final Context mContext;
+    private List<String> mUrlList;
+    private Context mContext;
     private OnMeizhiTouchListener mOnMeizhiTouchListener;
 
-    public MeizhiListAdapter(Context context, List<ImageItem> meizhiList) {
-        mList = meizhiList;
+    public MeizhiListAdapter(Context context,  List<String> urlList) {
+        mUrlList = urlList;
         mContext = context;
     }
 
@@ -42,23 +39,22 @@ public class MeizhiListAdapter extends RecyclerView.Adapter<MeizhiListAdapter.Vi
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, int position) {
-        final ImageItem imageItem = mList.get(position);
-        int sdCardImageWidth = BitmapUtils.getSDCardImageWidth(imageItem.sourcePath);
-        int sdCardImageHeight = BitmapUtils.getSDCardImageHeight(imageItem.sourcePath);
-        holder.image.setOriginalSize(sdCardImageWidth, sdCardImageHeight);
-        Glide.with(mContext).load(imageItem.sourcePath).into(holder.image);
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
+//        int sdCardImageWidth = BitmapUtils.getSDCardImageWidth(imageItem.sourcePath);
+//        int sdCardImageHeight = BitmapUtils.getSDCardImageHeight(imageItem.sourcePath);
+        holder.image.setOriginalSize(50, 50);
+        Glide.with(mContext).load(mUrlList.get(position)).into(holder.image);
         holder.image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mOnMeizhiTouchListener.onTouch(holder.image, imageItem, mList);
+                mOnMeizhiTouchListener.onTouch(holder.image, mUrlList.get(position), mUrlList);
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return mList.size();
+        return mUrlList.size();
     }
 
     public void setOnMeizhiTouchListener(OnMeizhiTouchListener onMeizhiTouchListener) {

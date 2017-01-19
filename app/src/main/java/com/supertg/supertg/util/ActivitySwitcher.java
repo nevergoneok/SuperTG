@@ -8,7 +8,6 @@ import android.view.View;
 
 import com.supertg.supertg.ui.about.view.AboutActivity;
 import com.supertg.supertg.ui.pic.view.PictureActivity;
-import com.supertg.supertg.util.getPicAlbum.ImageItem;
 
 
 /**
@@ -31,9 +30,9 @@ public class ActivitySwitcher {
     }
 
     public static void
-    startPictureActivity(Activity context, ImageItem meizhi, View transitView) {
+    startPictureActivity(Activity context, String meizhi, View transitView) {
         Intent intent = new Intent(context,PictureActivity.class);
-        intent.putExtra(PictureActivity.EXTRA_IMAGE_URL,meizhi.sourcePath);
+        intent.putExtra(PictureActivity.EXTRA_IMAGE_URL,meizhi);
         ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(context, transitView, PictureActivity.TRANSIT_PIC);
         try {
             ActivityCompat.startActivity(context, intent, optionsCompat.toBundle());

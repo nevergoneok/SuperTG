@@ -13,5 +13,5 @@ public class Constants {
      * sd卡根目录
      */
     public static String SDDRECTORY = Environment.getExternalStorageDirectory().getPath() + File.separator;
-    public static String GETIMAGESLIST = "http://mlf.f3322.net:83/upload/getimage1/";
+    public static String GETIMAGESLIST = "http://mlf.f3322.net:83/";
 }

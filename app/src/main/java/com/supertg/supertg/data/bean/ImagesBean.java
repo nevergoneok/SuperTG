@@ -7,16 +7,9 @@ import java.util.List;
  */
 
 public class ImagesBean{
-    private String ret;
 
     private List<ErrDesc> errDesc ;
 
-    public void setRet(String ret){
-        this.ret = ret;
-    }
-    public String getRet(){
-        return this.ret;
-    }
     public void setErrDesc(List<ErrDesc> errDesc){
         this.errDesc = errDesc;
     }

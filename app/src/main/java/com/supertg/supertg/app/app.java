@@ -1,6 +1,9 @@
 package com.supertg.supertg.app;
 
 import android.app.Application;
+import android.os.Environment;
+
+import java.io.File;
 
 /**
  * Created by xiongxing on 2017/1/16.
@@ -8,16 +11,31 @@ import android.app.Application;
 
 public class app extends Application {
 
-    private static app mContext;
+    private static app mInstance;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        this.mContext = this;
+        this.mInstance = this;
     }
 
-    public static app getApplication()
+    public static app getInstance()
     {
-        return mContext;
+        return mInstance;
+    }
+
+    /**
+     * 缓存数据地址
+     * @return
+     */
+    @Override
+    public File getCacheDir() {
+        if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+            File cacheDir = getExternalCacheDir();
+            if (cacheDir != null && (cacheDir.exists() || cacheDir.mkdirs())) {
+                return cacheDir;
+            }
+        }
+        return super.getCacheDir();
     }
 }

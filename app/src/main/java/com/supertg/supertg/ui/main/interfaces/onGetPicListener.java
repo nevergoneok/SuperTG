@@ -1,11 +1,11 @@
 package com.supertg.supertg.ui.main.interfaces;
 
-import com.supertg.supertg.data.bean.ImagesBean;
+import java.util.List;
 
 /**
  * Created by xiongxing on 2017/1/16.
  */
 
 public interface onGetPicListener {
-    void onGetPicSuccess(ImagesBean imagesBean);
+    void onGetPicSuccess(List<String> urlList);
 }

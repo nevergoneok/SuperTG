@@ -6,8 +6,8 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 
 import com.orhanobut.logger.Logger;
-import com.supertg.supertg.api.ImageService;
-import com.supertg.supertg.data.bean.ImagesBean;
+import com.supertg.supertg.api.MeiZiService;
+import com.supertg.supertg.data.table.Meizhi;
 import com.supertg.supertg.rx.HttpResult;
 import com.supertg.supertg.rx.TransformUtils;
 import com.supertg.supertg.rx.retrofit.ServiceFactory;
@@ -19,6 +19,10 @@ import com.supertg.supertg.util.ActivitySwitcher;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
+import rx.schedulers.Schedulers;
 
 /**
  * Model类，业务逻辑和实体模型
@@ -46,16 +50,25 @@ public class ImagesViewModel implements IImagesViewModel {
     @Override
     public void getMainPicData(final onGetPicListener onGetPicListener) {
         ServiceFactory.getInstance()
-                .createService(ImageService.class)
-                .getImageList()//获取Observable对象
-                .compose(TransformUtils.<HttpResult<List<ImagesBean.ErrDesc>>>defaultSchedulers())
-                .subscribe(new HttpResultSubscriber<List<ImagesBean.ErrDesc>>() {
+                .createService(MeiZiService.class)
+                .getMeiZiList(1)//获取Observable对象
+                .compose(TransformUtils.<HttpResult<List<Meizhi>>>defaultSchedulers())//不需要数据库操作可以这样写
+                .subscribeOn(Schedulers.io()) //指定耗时进程
+                .observeOn(Schedulers.newThread()) //指定doOnNext执行线程是新线程
+                .doOnNext(new Action1<HttpResult<List<Meizhi>>>() {
                     @Override
-                    public void onSuccess(List<ImagesBean.ErrDesc> list) {
-                        Logger.e("onNext" + list.get(0).getA());
+                    public void call(HttpResult<List<Meizhi>> listHttpResult) {
+                        Logger.e("doOnNext线程=="+Thread.currentThread().getName());
+                    }
+                })
+                .observeOn(AndroidSchedulers.mainThread())//指定最后观察者在主线程
+                .subscribe(new HttpResultSubscriber<List<Meizhi>>() {
+                    @Override
+                    public void onSuccess(List<Meizhi> list) {
+                        Logger.e("onNext" + list.get(0).url);
                         List<String> urlList = new ArrayList<>();
                         for (int i = 0; i < list.size(); i++) {
-                            urlList.add(list.get(i).getA());
+                            urlList.add(list.get(i).url);
                         }
                         onGetPicListener.onGetPicSuccess(urlList);
                     }

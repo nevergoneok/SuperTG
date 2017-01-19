@@ -1,6 +1,7 @@
 package com.supertg.supertg.ui.main.adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 import com.supertg.supertg.R;
 import com.supertg.supertg.ui.main.interfaces.OnMeizhiTouchListener;
 import com.supertg.supertg.widget.RatioImageView;
@@ -27,7 +29,7 @@ public class MeizhiListAdapter extends RecyclerView.Adapter<MeizhiListAdapter.Vi
     private Context mContext;
     private OnMeizhiTouchListener mOnMeizhiTouchListener;
 
-    public MeizhiListAdapter(Context context,  List<String> urlList) {
+    public MeizhiListAdapter(Context context, List<String> urlList) {
         mUrlList = urlList;
         mContext = context;
     }
@@ -40,9 +42,14 @@ public class MeizhiListAdapter extends RecyclerView.Adapter<MeizhiListAdapter.Vi
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
-//        int sdCardImageWidth = BitmapUtils.getSDCardImageWidth(imageItem.sourcePath);
+        try {
+            Bitmap bitmap = Picasso.with(mContext).load(mUrlList.get(position)).get();
+//         int sdCardImageWidth = BitmapUtils.getSDCardImageWidth(imageItem.sourcePath);
 //        int sdCardImageHeight = BitmapUtils.getSDCardImageHeight(imageItem.sourcePath);
-        holder.image.setOriginalSize(50, 50);
+            holder.image.setOriginalSize(bitmap.getWidth(), bitmap.getHeight());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         Glide.with(mContext).load(mUrlList.get(position)).into(holder.image);
         holder.image.setOnClickListener(new View.OnClickListener() {
             @Override

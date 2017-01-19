@@ -32,8 +32,8 @@ public abstract class HttpResultSubscriber<T> extends Subscriber<HttpResult<T>> 
 
     @Override
     public void onNext(HttpResult<T> t) {
-        if ("0".equals(t.ret))
-            onSuccess(t.errDesc);
+        if (!t.error)
+            onSuccess(t.results);
         else
             _onError(new Throwable("error=true"));
     }

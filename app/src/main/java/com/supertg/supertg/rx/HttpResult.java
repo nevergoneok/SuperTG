@@ -7,7 +7,7 @@ package com.supertg.supertg.rx;
  */
 public class HttpResult<T> {
 
-    public String ret;
+    public boolean error;
     //@SerializedName(value = "results", alternate = {"result"})
-    public T errDesc;//T 是返回结果results的类型
+    public T results;//T 是返回结果results的类型
 }

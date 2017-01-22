@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.supertg.supertg.util;
+package com.supertg.supertg.util.barutils;
 
 import android.view.View;
 

@@ -16,12 +16,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.supertg.supertg.util;
+package com.supertg.supertg.util.barutils;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.os.Build;
 import android.view.View;
+
+import com.supertg.supertg.util.barutils.SystemUiVisibilityUtil;
 
 /**
  * 状态栏显示与否

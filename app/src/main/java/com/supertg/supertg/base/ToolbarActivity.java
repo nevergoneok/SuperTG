@@ -17,13 +17,12 @@
  * along with Meizhi.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.supertg.supertg.ui.base;
+package com.supertg.supertg.base;
 
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
@@ -32,7 +31,7 @@ import android.view.animation.DecelerateInterpolator;
 import com.supertg.supertg.R;
 
 
-public abstract class ToolbarActivity extends AppCompatActivity {
+public abstract class ToolbarActivity extends BaseActivity {
 
     abstract protected int provideContentViewId();
     protected AppBarLayout mAppBar;

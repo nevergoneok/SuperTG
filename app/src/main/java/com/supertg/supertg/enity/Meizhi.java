@@ -1,4 +1,4 @@
-package com.supertg.supertg.data.table;
+package com.supertg.supertg.enity;
 
 /**
  * Created by xiongxing on 2017/1/19.

@@ -17,7 +17,7 @@
  * along with Meizhi.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.supertg.supertg.util;
+package com.supertg.supertg.util.share;
 
 import android.content.Context;
 import android.content.Intent;
@@ -27,6 +27,7 @@ import com.supertg.supertg.R;
 
 
 /**
+ * android 原生分享
  * Created by drakeet on 8/17/15.
  */
 public class Shares {

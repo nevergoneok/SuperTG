@@ -1,4 +1,4 @@
-package com.supertg.supertg.rx;
+package com.supertg.supertg.rx.tansform;
 
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;

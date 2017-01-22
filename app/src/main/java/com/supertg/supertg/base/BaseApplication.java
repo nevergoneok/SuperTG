@@ -1,4 +1,4 @@
-package com.supertg.supertg.app;
+package com.supertg.supertg.base;
 
 import android.app.Application;
 import android.os.Environment;
@@ -9,9 +9,9 @@ import java.io.File;
  * Created by xiongxing on 2017/1/16.
  */
 
-public class app extends Application {
+public class BaseApplication extends Application {
 
-    private static app mInstance;
+    private static BaseApplication mInstance;
 
     @Override
     public void onCreate() {
@@ -19,7 +19,7 @@ public class app extends Application {
         this.mInstance = this;
     }
 
-    public static app getInstance()
+    public static BaseApplication getInstance()
     {
         return mInstance;
     }

@@ -7,7 +7,7 @@ import android.view.MenuItem;
 
 import com.orhanobut.logger.Logger;
 import com.supertg.supertg.R;
-import com.supertg.supertg.ui.base.ToolbarActivity;
+import com.supertg.supertg.base.ToolbarActivity;
 import com.supertg.supertg.ui.main.presenter.MainGetPicPresenter;
 import com.supertg.supertg.util.ActivitySwitcher;
 
@@ -32,7 +32,7 @@ public class MainActivity extends ToolbarActivity implements IMainGetPicView{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
-        mainGetPicPresenter.getPicData(this,list);
+        mainGetPicPresenter.getPicData(this,list,lifecycleSubject);
     }
 
     @Override

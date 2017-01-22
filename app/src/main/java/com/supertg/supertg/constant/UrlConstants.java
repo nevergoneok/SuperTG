@@ -8,7 +8,7 @@ import java.io.File;
  * Created by xiongxing on 2017/1/18.
  */
 
-public class Constants {
+public class UrlConstants {
     /**
      * sd卡根目录
      */

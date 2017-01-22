@@ -53,4 +53,5 @@ dependencies {
     compile ('com.squareup.retrofit2:retrofit:2.1.0') {
         exclude module: 'okhttp'
     }
+    compile 'com.github.ybq:Android-SpinKit:1.1.0'
 }

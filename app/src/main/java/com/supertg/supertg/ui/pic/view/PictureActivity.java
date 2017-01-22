@@ -13,9 +13,9 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.orhanobut.logger.Logger;
 import com.supertg.supertg.R;
-import com.supertg.supertg.util.ImmersiveUtil;
+import com.supertg.supertg.util.barutils.ImmersiveUtil;
 import com.supertg.supertg.util.InOutAnimationUtils;
-import com.supertg.supertg.util.Shares;
+import com.supertg.supertg.util.share.Shares;
 
 import java.io.File;
 

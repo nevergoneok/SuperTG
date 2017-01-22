@@ -1,7 +1,5 @@
 package com.supertg.supertg.ui.main;
 
-import android.support.v7.widget.RecyclerView;
-
 import com.supertg.supertg.mvpframe.base.ActivityLifeCycleEvent;
 import com.supertg.supertg.mvpframe.base.BaseModel;
 import com.supertg.supertg.mvpframe.base.BasePresenter;
@@ -36,6 +34,6 @@ public interface MainContract {
      * 处理数据返回，数据处理，沟通view和model     Presenter持有view和model去做操作
      */
     abstract class Presenter extends BasePresenter<Model,View>{
-        abstract void  getMeiZiList(final MainActivity mainActivity, final RecyclerView mRecyclerView, int page, PublishSubject<ActivityLifeCycleEvent> lifecycleSubject);
+        abstract void  getMeiZiList(final MainActivity mainActivity,int page, PublishSubject<ActivityLifeCycleEvent> lifecycleSubject);
     }
 }

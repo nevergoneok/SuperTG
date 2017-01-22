@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/md_black_1000"
-    tools:context="com.supertg.supertg.ui.pic.view.PictureActivity">
+    tools:context="com.supertg.supertg.ui.pic.PictureActivity">
 
     <!--要使用PhotoView且要写完整路径-->
     <!--<uk.co.senab.photoview.PhotoView-->

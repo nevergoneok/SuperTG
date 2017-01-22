@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.Window;
 
 import com.supertg.supertg.R;
-import com.supertg.supertg.rx.interfaces.ProgressCancelListener;
+import com.supertg.supertg.mvpframe.rx.interfaces.ProgressCancelListener;
 
 import java.lang.ref.WeakReference;
 

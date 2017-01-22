@@ -6,8 +6,8 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.view.View;
 
-import com.supertg.supertg.ui.about.view.AboutActivity;
-import com.supertg.supertg.ui.pic.view.PictureActivity;
+import com.supertg.supertg.ui.about.AboutActivity;
+import com.supertg.supertg.ui.pic.PictureActivity;
 
 
 /**

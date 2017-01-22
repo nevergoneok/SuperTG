@@ -1,4 +1,4 @@
-package com.supertg.supertg.api;
+package com.supertg.supertg.mvpframe.rx.apiservice;
 
 
 import com.supertg.supertg.bean.Meizhi;
@@ -11,10 +11,10 @@ import retrofit2.http.Path;
 import rx.Observable;
 
 /**
- * Created by xiongxing on 2017/1/18.
+ * Created by helin on 2016/10/9 17:09.
  */
 
-public interface MeiZiService {
+public interface ApiService {
     //接口名
     @GET("data/福利/10"+"/{page}")
     Observable<HttpResult<List<Meizhi>>> getMeiZiList(@Path("page")int page);

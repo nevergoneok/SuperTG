@@ -30,7 +30,9 @@ import android.view.animation.DecelerateInterpolator;
 
 import com.supertg.supertg.R;
 
-
+/**
+ * 支持toolbar的继承类
+ */
 public abstract class ToolbarActivity extends BaseActivity {
 
     abstract protected int provideContentViewId();

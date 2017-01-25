@@ -10,11 +10,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
 import com.orhanobut.logger.Logger;
 import com.supertg.supertg.R;
-import com.supertg.supertg.util.barutils.ImmersiveUtil;
+import com.supertg.supertg.imageloader.ImageLoader;
 import com.supertg.supertg.util.InOutAnimationUtils;
+import com.supertg.supertg.util.barutils.ImmersiveUtil;
 import com.supertg.supertg.util.share.Shares;
 
 import java.io.File;
@@ -60,7 +60,7 @@ public class PictureActivity extends AppCompatActivity {
         parseIntent();
         ViewCompat.setTransitionName(picture, TRANSIT_PIC);
 //        disPlayImage();
-        Glide.with(this).load(mImageUrl).into(picture);
+        ImageLoader.getInstance().displayImage(this,mImageUrl,picture);
 //        Picasso.with(this).load(mImageUrl).into(picture);
         setupPhotoAttacher();
     }

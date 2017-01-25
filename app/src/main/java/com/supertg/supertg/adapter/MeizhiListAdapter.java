@@ -8,9 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.bumptech.glide.Glide;
 import com.squareup.picasso.Picasso;
 import com.supertg.supertg.R;
+import com.supertg.supertg.imageloader.ImageLoader;
 import com.supertg.supertg.interfaces.OnMeizhiTouchListener;
 import com.supertg.supertg.widget.RatioImageView;
 
@@ -50,7 +50,7 @@ public class MeizhiListAdapter extends RecyclerView.Adapter<MeizhiListAdapter.Vi
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Glide.with(mContext).load(mUrlList.get(position)).into(holder.image);
+        ImageLoader.getInstance().displayImage(mContext,mUrlList.get(position),holder.image);
         holder.image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
